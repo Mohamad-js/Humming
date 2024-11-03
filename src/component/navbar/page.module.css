@@ -1,19 +1,67 @@
 .navbar {
-   position: absolute;
+   position: fixed;
+   z-index: 2;
    top: 0;
    width: 100%;
-   height: 50px;
-   background-color: white;
+   height: 70px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: 0.5s ;
+   animation: scroll1 forwards;
+   animation-timeline: scroll();
+   animation-range: 70px 80px;
+
+   &:hover {
+      height: 100px;
+   }
 
    & .options {
-      width: 800px;
-      height: 50px;
-      background-color: red;
-      color: black;
-
-      & li {
-         color: blue;
-         font: 15px vazir-l;
+      width: 625px;
+      height: 60px;
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s;
+      border: 1px solid rgba(0, 0, 0, 0);
+      animation: scroll2 forwards;
+      animation-timeline: scroll();
+      animation-range: 70px 80px;
+      
+      
+      &:hover {
+         border: 1px solid rgba(0, 0, 0, 0.2);
+         background-color: rgba(255, 255, 255, 0.5);
+         backdrop-filter: blur(5px);
       }
+      
+      
+      
+      & li {
+         list-style-type: none;
+         padding: 10px 20px;
+         border-radius: 50px;
+         font-size: 14px;
+         cursor: pointer;
+         
+         
+         &:hover {
+            box-shadow: 0.1px 0.1px 2px black;
+            
+         }
+      }
+   }
+}
+
+@keyframes scroll1 {
+   to {height: 100px;}
+}
+
+@keyframes scroll2 {
+   to {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      background-color: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(5px);
    }
 }

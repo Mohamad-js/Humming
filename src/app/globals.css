@@ -1,38 +1,3 @@
-@font-face {
-  font-family: vazir-l;
-  src: url(/src/fonts/Vazir-Light.ttf);
-}
-
-@font-face {
-  font-family: vazir-m;
-  src: url(/src/fonts/Vazir-Medium.ttf);
-}
-
-@font-face {
-  font-family: vazir-b;
-  src: url(/src/fonts/Shabnam-Bold.ttf);
-}
-
-@font-face {
-  font-family: shab-l;
-  src: url(/src/fonts/Shabnam-Light.ttf);
-}
-
-@font-face {
-  font-family: shab-m;
-  src: url(/src/fonts/Shabnam-Medium.woff);
-}
-
-@font-face {
-  font-family: shab-b;
-  src: url(/src/fonts/Shabnam-Bold.ttf);
-}
-
-@font-face {
-  font-family: yekan;
-  src: url(/src/fonts/Yekan-Bold.ttf);
-}
-
 * {
   padding: 0;
   margin: 0;

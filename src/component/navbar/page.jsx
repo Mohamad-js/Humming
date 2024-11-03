@@ -1,23 +1,26 @@
 import style from './page.module.css'
+import './../../app/globals.css'
+import localFont from 'next/font/local';
 
-
+const vazirM = localFont({
+   src: './../../../public/fonts/Vazir-light.ttf'
+})
 
 
 function Navbar(){
-   
-   
+      
    return(
    
    <>
       <div className={style.navbar}>
-         <div className={style.options}>
+         <ul className={`${vazirM.className} ${style.options}`}>
             <li>صفحه اصلی</li>
             <li>حساب کاربری</li>
-            <li>محصولات</li>
-            <li>شعبه ها</li>
+            <li>ثبت سفارش</li>
+            <li>نمونه کارها</li>
             <li>درباره ما</li>
-            <li>استخدام</li>
-         </div>
+            <li>ارتباط با ما</li>
+         </ul>
       </div>
    </>
 
