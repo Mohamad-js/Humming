@@ -8,7 +8,7 @@ function Products(){
    return(
    
    <>
-      <h1 className={style.background}>The Products</h1>
+      <h1 className={style.background}>صفحه کل محصولات</h1>
    </>
 
 

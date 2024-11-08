@@ -8,7 +8,7 @@ const vazirL = localFont({
 
 
 export const metadata = {
-  title: "خشکشویی نگین تهران",
+  title: "شرکت مهندسی نرم افزار هدهد",
   description: "Negin Tehran Dry Cleaning's Website",
 };
 

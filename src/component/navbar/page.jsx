@@ -10,7 +10,6 @@ const vazirM = localFont({
 function Navbar(){
       
    return(
-   
    <>
       <div className={style.navbar}>
          <ul className={`${vazirM.className} ${style.options}`}>

@@ -1,11 +1,11 @@
 import style from "./page.module.css";
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 import Image from "next/image";
 import pic from './../../public/photos/Landing/main.png'
 
-const vazirL = localFont({
-  src: './fonts/Vazir-Bold.ttf'
-})
+// const vazirL = localFont({
+//   src: './fonts/Vazir-Bold.ttf'
+// })
 
 export default function Home() {
   return (
