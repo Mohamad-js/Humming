@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/component/navbar/page";
+import SmoothScrolling from "@/component/lenis/SmoothScrolling";
 
 const vazirL = localFont({
   src: './../../public/fonts/Shabnam-Bold.ttf',
@@ -8,7 +9,7 @@ const vazirL = localFont({
 
 
 export const metadata = {
-  title: "شرکت مهندسی نرم افزار هدهد",
+  title: "شرکت مهندسی نرم افزار هامینگ",
   description: "Negin Tehran Dry Cleaning's Website",
 };
 
@@ -16,8 +17,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
       <body>
-        <Navbar className={vazirL.className} />
-        {children}
+        <SmoothScrolling>
+          <Navbar className={vazirL.className} />
+          {children}
+        </SmoothScrolling>
       </body>
     </html>
   );

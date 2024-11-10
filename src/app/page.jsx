@@ -1,16 +1,17 @@
 import style from "./page.module.css";
 // import localFont from "next/font/local";
 import Image from "next/image";
-import pic from './../../public/photos/Landing/main.png'
+import pic from './../../public/photos/Landing/fixed.jpg'
 
 // const vazirL = localFont({
 //   src: './fonts/Vazir-Bold.ttf'
 // })
 
 export default function Home() {
+
   return (
     <>
-      <div className={style.container}>
+      <div className={style.headerContainer}>
         <Image
           className={style.header_img}
           src={pic}
@@ -19,7 +20,11 @@ export default function Home() {
           placeholder="blur"
         />
       </div>
+
+      <div className={style.services}></div>
+
       <div className={style.scroller}></div>
+
     </>
   );
 }

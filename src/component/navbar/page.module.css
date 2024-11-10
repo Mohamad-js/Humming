@@ -1,67 +1,397 @@
 .navbar {
    position: fixed;
-   z-index: 2;
    top: 0;
+   z-index: 1;
    width: 100%;
-   height: 70px;
+   height: 80px;
    display: flex;
    justify-content: center;
    align-items: center;
-   transition: 0.5s ;
-   animation: scroll1 forwards;
-   animation-timeline: scroll();
-   animation-range: 70px 80px;
+   transition: 0.3s;
+   gap: 200px;
 
-   &:hover {
-      height: 100px;
+   @media (910px <= width < 1255px) {
+      gap: 100px;
+   }
+   
+   @media (550px <= width < 1155px) {
+      height: 50px;
    }
 
-   & .options {
-      width: 625px;
-      height: 60px;
-      border-radius: 50px;
+   @media (550px <= width < 910px) {
+      justify-content: start;
+   }
+
+   @media (width < 550px) {
+      display: none;
+   }
+   
+   
+   & .right {
+      width: 550px;
+      height: 70px;
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: 0.3s;
-      border: 1px solid rgba(0, 0, 0, 0);
-      animation: scroll2 forwards;
-      animation-timeline: scroll();
-      animation-range: 70px 80px;
-      
-      
-      &:hover {
-         border: 1px solid rgba(0, 0, 0, 0.2);
-         background-color: rgba(255, 255, 255, 0.5);
-         backdrop-filter: blur(5px);
+      transition: 0.7s;
+
+      @media (550px <= width < 1155px) {
+         height: 50px;
       }
+
+      @media (550px <= width < 910px) {
+         width: 470px;
+      }
+
+            
       
+      & li {
+         list-style-type: none;
+         background-color: rgba(255, 255, 255, 0);
+         padding: 7px 20px;
+         border-radius: 5px;
+         font-size: 14px;
+         cursor: pointer;
+         
+         &:hover {
+            background-color: rgb(245, 245, 245);
+         }
+
+         @media (910px <= width < 1155px) {
+            font-size: 11px;
+            padding: 7px 13px;
+         }
+         
+         @media (550px <= width < 910px) {
+            font-size: 12px;
+            padding: 7px 13px;
+         }
+         
+
+
+         &:nth-child(6) {
+            padding-left: 25px;
+            display: none;
+
+            &:hover svg {
+               rotate: 180deg;
+            }
+
+            &:hover .more {
+               display: block;
+            }
+
+            @media (550px < width < 910px) {
+               display: block;
+            }
+
+
+            & svg {
+               position: absolute;
+               top: 20px;
+               margin-right: 5px;
+               height: 13px;
+               width: 13px;
+               transition: 0.5s;
+            }
+
+
+            & .more {
+               display: none;
+               position: absolute;
+               top: 40px;
+               background-color: white;
+               border-radius: 5px;
+               box-shadow: -1px 2px 5px 0.5px black;
+            }
+         }
+      }
+   }
+   
+   
+   & .left {
+      width: 550px;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.7s;
+      
+      @media (910px <= width < 1155px) {
+         height: 50px;
+      }
+
+      @media (550px <= width < 910px) {
+         display: none;
+      }
       
       
       & li {
          list-style-type: none;
-         padding: 10px 20px;
-         border-radius: 50px;
+         background-color: rgba(255, 255, 255, 0);
+         padding: 7px 20px;
+         border-radius: 5px;
          font-size: 14px;
          cursor: pointer;
          
-         
          &:hover {
-            box-shadow: 0.1px 0.1px 2px black;
-            
+            background-color: rgb(245, 245, 245);
+         }
+
+         @media (910px <= width < 1155px) {
+            font-size: 12px;
+            padding: 7px 13px;
          }
       }
    }
 }
 
-@keyframes scroll1 {
-   to {height: 100px;}
+.logoHolder {
+   position: fixed;
+   z-index: 2;
+   top: 0;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: 1s;
+   
+   &:hover .hummingBird {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 1;
+   }
+
+   @media (550px <= width < 910px) {
+      justify-content: end;
+   }
+
+   @media (width < 550px) {
+      justify-content: left;
+   }
+
+
+
+   & .circle {
+      position: fixed;
+      top: 50px;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      display: none;
+      background-color: var(--main);
+      animation: circle linear forwards;
+      animation-timeline: scroll();
+      
+      @media (width < 550px) {
+         display: block;
+         top: 10px;
+         left: 10px;
+         opacity: 0.5;
+         box-shadow: 0.5px 0.5px 15px 2px black;
+      }
+   }
+   
+   
+   
+   & svg {
+      width: 50px;
+      animation: nest linear forwards;
+      animation-timeline: scroll();
+      
+      @media (550px <= width < 1155px) {
+         width: 35px;
+      }
+
+      @media (width < 550px) {
+         width: 65px;
+      }
+
+      
+      
+      
+      
+      & .hummingBird {
+         fill: none;
+         stroke: black;
+         stroke-width: 15px;
+         stroke-dasharray: 2900;
+         stroke-dashoffset: 2900;
+         animation: bird linear forwards;
+         animation-timeline: scroll();
+
+         @media (width < 550px) {
+            position: absolute;
+            top: 70px;
+            left: 30px;
+         }
+      }
+   }
 }
 
-@keyframes scroll2 {
-   to {
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      background-color: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(5px);
+@keyframes bird {
+   95% {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 1;
+      fill: none;
+      stroke: black;
+   }
+   
+   95.1% {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 1;
+      stroke: none;
+      fill: var(--main);
+   }
+   
+   100% {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 1;
+      fill: var(--main);
+      stroke: none;
+   }
+}
+
+@keyframes nest {
+   0% {
+      position: absolute;
+      top: 10px;
+   }
+
+   95% {
+      position: absolute;
+      top: 10px;
+      width: 50px;
+   }
+   
+   100% {
+      position: absolute;
+      top: 200px;
+      width: 200px;
+   }
+}
+
+@media (910px <= width < 1155px) {
+   @keyframes nest {
+      0% {
+         position: absolute;
+         top: 5px;
+      }
+   
+      95% {
+         position: absolute;
+         top: 5px;
+         width: 35px;
+         transform: translate(0,0);
+      }
+      
+      100% {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, 50vh);
+         width: 200px;
+      }
+   }
+}
+
+@media (550px <= width < 910px) {
+   @keyframes nest {
+      0% {
+         position: absolute;
+         top: 5px;
+         width: 35px;
+         left: 10px;
+      }
+   
+      95% {
+         position: absolute;
+         top: 5px;
+         width: 35px;
+         left: 10px;
+         transform: translate(0, 0);
+      }
+      
+      100% {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, 50vh);
+         width: 200px;
+      }
+   }}
+
+@media (width < 550px) {
+   @keyframes bird {
+      70% {
+         stroke-dasharray: 3000;
+         stroke-dashoffset: 1;
+         fill: none;
+         stroke: black;
+      }
+   
+      75% {
+         stroke-dasharray: 3000;
+         stroke-dashoffset: 1;
+         stroke: none;
+         fill: var(--main);
+      }
+      
+      95.1% {
+         stroke-dasharray: 3000;
+         stroke-dashoffset: 1;
+         stroke: none;
+         fill: var(--main);
+      }
+      
+      100% {
+         stroke-dasharray: 3000;
+         stroke-dashoffset: 1;
+         fill: var(--main);
+         stroke: none;
+      }
+   }
+
+   @keyframes nest {
+      0% {
+         position: absolute;
+         top: 25px;
+         width: 65px;
+         left: 33px;
+      }
+
+      70% {
+         
+      }
+   
+      75% {
+         position: absolute;
+         width: 65px;
+         top: 25;
+         left: 33px;
+         transform: translate(0, 0);
+      }
+      
+      100% {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, 50vh);
+         width: 150px;
+      }
+   }
+}
+   
+@media (width < 550px) {
+   @keyframes circle {
+      95% {
+         opacity: 0.5;
+      }
+      
+      100% {
+         opacity: 0;
+      }
    }
 }
